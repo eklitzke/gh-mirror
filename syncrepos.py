@@ -53,7 +53,7 @@ def main():
     args = parser.parse_args()
 
     for repo in get_repos(args.username):
-        dest = os.path.join(args.destdir, repo['name'])
+        dest = os.path.join(args.destdir, '{}.git'.format(repo['name']))
         try:
             if not os.path.exists(dest):
                 print('clone {}'.format(repo['full_name']))
